@@ -204,11 +204,9 @@ function render() {
   gridLine();
 
   for (let x = getStartPosition(start.x, CANVAS_WIDTH); x < end.x; x += pixels) {
-    console.log('zoom: ' + zoom.toFixed(4) + ' x: ' + x);
     line(x, start.y, x, end.y);
   }
-  //line(400, start.y, 400, end.y);
-  console.log('---------------------------------------------------------');
+  
   for (let y = getStartPosition(start.y, CANVAS_HEIGHT); y < end.y; y += pixels) {
     line(start.x, y, end.x, y);
   }

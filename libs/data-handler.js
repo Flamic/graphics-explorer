@@ -21,6 +21,7 @@ async function parseJsonOrRedirect(fileData) {
     if (!loc || loc.length < 2 || loc[loc.length - 2] == data.type) return data;
 
     loc[loc.length - 2] = data.type;
+    if (loc[0] === 'https:' || loc[0] === 'http:') loc[0] += '/';
     await setRedirectedFile(fileData);
     //await new Promise((r) => setTimeout(r, 3000));
     //console.log(await getRedirectedFile(fileData));
