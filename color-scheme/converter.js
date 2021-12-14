@@ -1,3 +1,4 @@
+// Convert from RGB to HSL model
 function rgbToHsl({ r, g, b }) {
   r /= 255;
   g /= 255;
@@ -33,6 +34,7 @@ function rgbToHsl({ r, g, b }) {
   return { h, s, l };
 }
 
+// Convert from HSL to RGB model
 function hslToRgb({ h, s, l }) {
   const ht = (h ?? 0) / 60;
   const c = s * (1 - Math.abs(2 * l - 1));
@@ -69,6 +71,7 @@ function hslToRgb({ h, s, l }) {
   return { r, g, b };
 }
 
+// Get array of image pixels in HSL model
 function imageDataToHslArray(data) {
   const arr = [];
   
@@ -79,10 +82,12 @@ function imageDataToHslArray(data) {
   return arr;
 }
 
+// Add lightness to pixel in HSL model
 function addLightness({ h, s, l }, delta) {
   return delta ? { h, s, l: constrain(l + delta, 0, 1) } : { h, s, l };
 }
 
+// Constrain value with min and max values
 function constrain(value, min, max) {
   return value > max ? max : (value < min ? min : value);
 }

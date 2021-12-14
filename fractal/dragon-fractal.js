@@ -5,15 +5,18 @@ class DragonFractal {
     this.restart();
   }
 
+  // Go to first iteration
   restart() {
     this.count = 0;
     this.lines = [{ start: this.start.copy(), end: this.end.copy() }];
   }
 
+  // Get count of iterations
   getCount() {
     return this.count;
   }
 
+  // Render fractal lines
   render() {
     this.lines.forEach((lineElement) => {
       line(
@@ -25,11 +28,13 @@ class DragonFractal {
     });
   }
 
+  // Generate fractal
   generate(iterations = 1) {
     this.restart();
     for (let i = 0; i < iterations; ++i) this.next();
   }
 
+  // Next iteration
   next() {
     let last = this.lines[this.lines.length - 1].end;
     let lastCount = this.lines.length;

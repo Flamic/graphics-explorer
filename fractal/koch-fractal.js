@@ -4,16 +4,19 @@ class KochFractal {
       this.end = createVector(width, height / 1.5);
       this.restart();
     }
-  
+    
+    // Go to first iteration
     restart() {
       this.count = 0;
       this.lines = [{ start: this.start.copy(), end: this.end.copy() }];
     }
   
+    // Get count of iterations
     getCount() {
       return this.count;
     }
   
+    // Render fractal lines
     render() {
       this.lines.forEach((lineElement) => {
         line(
@@ -25,11 +28,13 @@ class KochFractal {
       });
     }
   
+    // Generate fractal
     generate(lineCount = 2, iterations = 1) {
       this.restart();
       for (let i = 0; i < iterations; ++i) this.next(lineCount);
     }
   
+    // Next iteration
     next(lineCount = 2) {
       let newLines = [];
   

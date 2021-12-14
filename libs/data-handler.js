@@ -23,25 +23,10 @@ async function parseJsonOrRedirect(fileData) {
     loc[loc.length - 2] = data.type;
     if (loc[0] === 'https:' || loc[0] === 'http:') loc[0] += '/';
     await setRedirectedFile(fileData);
-    //await new Promise((r) => setTimeout(r, 3000));
-    //console.log(await getRedirectedFile(fileData));
-    //await setRedirectedFile(fileData);
-    //debugger;
-    //sessionStorage.setItem("content", fileData);
     location.href = loc.join("/");
   } catch (e) {
     console.error("Parsing error", e, "JSON: " + fileData);
     alert("Incorrect file data!");
-    /*if (e instanceof QuotaExceededError) {
-      alert(
-        "File is too large. Unfortunately you cannot upload large files from a page of another type. " +
-          "Click 'GO' button and you will be redirected to related type page. Then try to upload file again. Good luck ^w^"
-      );
-      location.href = loc.join("/");
-    } else {
-      console.log("Parsing error: " + e);
-      alert("Incorrect file data!");
-    }*/
   }
   return null;
 }
@@ -90,19 +75,6 @@ function setRedirectedFile(data) {
     };
   });
 }
-
-// openRequest = indexedDB.open(dbName, dbVersion);
-// openRequest.onsuccess = () => {
-//   const db = openRequest.result;
-//   const transaction = db.transaction(fileStoreName, "readonly");
-//   let request = transaction.objectStore(fileStoreName).get(1);
-
-//   request.onsuccess = () => {
-//     console.log(request.result);
-//   }
-
-//   openRequest.onerror = () => console.log(openRequest.error);
-// };
 
 function getRedirectedFile() {
   const openRequest = indexedDB.open(dbName, dbVersion);
