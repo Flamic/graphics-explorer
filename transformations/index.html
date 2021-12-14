@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+      integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+    <script src="../libs/data-handler.js" defer></script>
+    <script src="util.js" defer></script>
+    <script src="transformations.js" defer></script>
+    <title>Affine transformations</title>
+  </head>
+
+  <body class="purple-body">
+    <nav class="nav">
+      <a href="../index.html">
+        <img class="logo" src="../assets/images/logo.svg" />
+        <img class="logo-title" src="../assets/images/logo-title.svg" />
+      </a>
+      <a class="nav-item" href="../index.html">Home</a>
+      <a class="nav-item" href="../fractal/index.html">IFS-fractal</a>
+      <a class="nav-item" href="../color-scheme/index.html">Color scheme</a>
+      <a class="nav-item selected">Transformation</a>
+      <button id="upload-button" class="upload-button">
+        Upload project <i class="icon-upload-arrow"></i>
+      </button>
+    </nav>
+
+    <div class="page">
+      <h1 class="title">Triangle affine transformations</h1>
+
+      <div class="workspace">
+        <div class="parameter-block">
+          <div class="parameter-input">
+            Point A
+            <div class="row-container">
+              <label>
+                <span>X:</span>
+                <input
+                  id="ax"
+                  type="number"
+                  min="-1000"
+                  max="1000"
+                  value="-0.5"
+                  step="0.1"
+                />
+              </label>
+              <label>
+                <span>Y:</span>
+                <input
+                  id="ay"
+                  type="number"
+                  min="-1000"
+                  max="1000"
+                  value="3"
+                  step="0.1"
+                />
+              </label>
+            </div>
+          </div>
+
+          <div class="parameter-input">
+            Point B
+            <div class="row-container">
+              <label>
+                <span>X:</span>
+                <input
+                  id="bx"
+                  type="number"
+                  min="-1000"
+                  max="1000"
+                  value="3"
+                  step="0.1"
+                />
+              </label>
+              <label>
+                <span>Y:</span>
+                <input
+                  id="by"
+                  type="number"
+                  min="-1000"
+                  max="1000"
+                  value="11.5"
+                  step="0.1"
+                />
+              </label>
+            </div>
+          </div>
+
+          <div class="parameter-input">
+            Point C
+            <div class="row-container">
+              <label>
+                <span>X:</span>
+                <input
+                  id="cx"
+                  type="number"
+                  min="-1000"
+                  max="1000"
+                  value="5.9"
+                  step="0.1"
+                />
+              </label>
+              <label>
+                <span>Y:</span>
+                <input
+                  id="cy"
+                  type="number"
+                  min="-1000"
+                  max="1000"
+                  value="0.4"
+                  step="0.1"
+                />
+              </label>
+            </div>
+          </div>
+
+          <div class="parameter-input">
+            Scale
+            <div class="row-container tooltip">
+              <span class="tooltiptext">
+                These numbers are the scaling factors for animation on the x and
+                y axes.
+              </span>
+              <label>
+                <span>X:</span>
+                <input
+                  id="sx"
+                  type="number"
+                  min="-1000"
+                  max="1000"
+                  value="1"
+                  step="0.1"
+                />
+              </label>
+              <label>
+                <span>Y:</span>
+                <input
+                  id="sy"
+                  type="number"
+                  min="-1000"
+                  max="1000"
+                  value="1"
+                  step="0.1"
+                />
+              </label>
+            </div>
+          </div>
+
+          <div class="button-box">
+            <div class="tooltip">
+              <span class="tooltiptext">
+                This button allows you to start or pause animation of triangle
+                reflection transform relative to (0; 0) with scaling.
+              </span>
+              <button id="start-button">Start <i class="icon-play"></i></button>
+              <button id="stop-button">Stop <i class="icon-stop"></i></button>
+            </div>
+            <div class="tooltip">
+              <span class="tooltiptext">
+                .ge file is a project file which contains data about type of
+                project and all parameters for this type. You can upload this
+                file and parameters will be inserted automatically. You will see
+                the same image in the viewport as it was before.
+              </span>
+              <button id="download-ge" class="bold-button">
+                Download .ge <i class="icon-download-arrow"></i>
+              </button>
+              <button id="download-png" class="bold-button">
+                Download .png <i class="icon-image"></i>
+              </button>
+            </div>
+            <div>
+              <a href="../index.html#affine-transformations">
+                <button id="read-more">
+                  Read more about affine transformations
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div id="draw-block" class="draw-block">
+          <div id="scale-text">1.00x</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+      </div>
+    </div>
+
+    <a
+      id="download-file"
+      style="display: none"
+      download="transformations.ge"
+    ></a>
+    <input id="upload-file" style="display: none" type="file" />
+  </body>
+</html>

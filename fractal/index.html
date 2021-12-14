@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+      integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+    <script src="../libs/data-handler.js" defer></script>
+    <script src="koch-fractal.js" defer></script>
+    <script src="dragon-fractal.js" defer></script>
+    <script src="fractal.js" defer></script>
+    <title>Home</title>
+  </head>
+
+  <body class="blue-body">
+    <nav class="nav">
+      <a href="../index.html">
+        <img class="logo" src="../assets/images/logo.svg" />
+        <img class="logo-title" src="../assets/images/logo-title.svg" />
+      </a>
+      <a class="nav-item" href="../index.html">Home</a>
+      <a class="nav-item selected">IFS-fractal</a>
+      <a class="nav-item" href="../color-scheme/index.html">Color scheme</a>
+      <a class="nav-item" href="../transformations/index.html"
+        >Transformation</a
+      >
+      <button id="upload-button" class="upload-button">
+        Upload project <i class="icon-upload-arrow"></i>
+      </button>
+    </nav>
+
+    <div class="page">
+      <h1 class="title">Fractal generator</h1>
+
+      <div class="workspace">
+        <div class="parameter-block">
+          <label class="parameter-input">
+            Type
+            <div class="tooltip">
+              <select id="type">
+                <option>Koch curve</option>
+                <option>Harter–Heighway dragon</option>
+              </select>
+              <span class="tooltiptext">
+                The type of fractal specifies a certain construction algorithm.
+                Different types of fractals have different parameters and
+                appearance.
+              </span>
+            </div>
+          </label>
+
+          <label class="parameter-input">
+            Line count
+            <div class="tooltip">
+              <input
+                id="line-count"
+                type="number"
+                min="1"
+                max="100"
+                value="2"
+              />
+              <span class="tooltiptext">
+                The number of lines of the elementary fragment of the fractal.
+                Available only for Koch curve.
+              </span>
+            </div>
+          </label>
+
+          <label class="parameter-input">
+            Color scheme
+            <div class="tooltip">
+              <select id="color-scheme">
+                <option>Monochromatic</option>
+                <option>Inversed monochromatic</option>
+                <option>Transparent background</option>
+              </select>
+              <span class="tooltiptext">
+                A color scheme is a set of different colors which an algorithm
+                will use to construct a fractal.
+              </span>
+            </div>
+          </label>
+
+          <label class="parameter-input">
+            Iterations count
+            <div class="tooltip">
+              <input
+                id="iterations-count"
+                type="number"
+                min="0"
+                max="20"
+                value="1"
+              />
+              <span class="tooltiptext">
+                Number of iterations of fractal construction. Determines the
+                depth of construction.
+              </span>
+            </div>
+          </label>
+
+          <div class="button-box">
+            <div class="tooltip">
+              <span class="tooltiptext">
+                Show every iteration with some interval.
+              </span>
+              <button id="animate">Animate iterations</button>
+            </div>
+            <div class="tooltip">
+              <span class="tooltiptext">
+                .ge file is a project file which contains data about type of
+                project and all parameters for this type. You can upload this
+                file and parameters will be inserted automatically. You will see
+                the same image in the viewport as it was before.
+              </span>
+              <button id="download-ge" class="bold-button">
+                Download .ge <i class="icon-download-arrow"></i>
+              </button>
+              <button id="download-png" class="bold-button">
+                Download .png <i class="icon-image"></i>
+              </button>
+            </div>
+            <div>
+              <a href="../index.html#fractal">
+                <button id="read-more">Read more about fractals</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div id="draw-block" class="draw-block tooltip">
+          <div id="scale-text">1.00x</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+      </div>
+    </div>
+
+    <a id="download-file" style="display: none" download="fractal.ge"></a>
+    <input id="upload-file" style="display: none" type="file" />
+  </body>
+</html>

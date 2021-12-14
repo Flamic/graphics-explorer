@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <script src="../libs/FileSaver.js" defer></script>
+    <script src="../libs/data-handler.js" defer></script>
+    <script src="converter.js" defer></script>
+    <script src="color-scheme.js" defer></script>
+    <title>Home</title>
+  </head>
+
+  <body class="green-body">
+    <nav class="nav">
+      <a href="../index.html">
+        <img class="logo" src="../assets/images/logo.svg" />
+        <img class="logo-title" src="../assets/images/logo-title.svg" />
+      </a>
+      <a class="nav-item" href="../index.html">Home</a>
+      <a class="nav-item" href="../fractal/index.html">IFS-fractal</a>
+      <a class="nav-item selected">Color scheme</a>
+      <a class="nav-item" href="../transformations/index.html"
+        >Transformation</a
+      >
+      <button id="upload-button" class="upload-button">
+        Upload project <i class="icon-upload-arrow"></i>
+      </button>
+    </nav>
+
+    <div class="page">
+      <h1 class="title">Color scheme editor</h1>
+
+      <div class="workspace">
+        <div class="parameter-block">
+          <label class="parameter-input tooltip">
+            <span class="tooltiptext">
+              This is color picker. It shows the color of the selected pixel
+              (selection with mouse hover) in two color models: RGB (red, green,
+              blue) and HSL (hue, saturation, lightness).
+            </span>
+            <div>
+              <span class="acc-text">RGB: </span>
+              <span class="acc-text" id="rgb-picker"
+                >&lt;hover over the picture&gt;</span
+              >
+            </div>
+            <div>
+              <span class="acc-text">HSL: </span>
+              <span class="acc-text" id="hsl-picker"
+                >&lt;hover over the picture&gt;</span
+              >
+            </div>
+          </label>
+
+          <label class="parameter-input tooltip">
+            <span class="tooltiptext">
+              This slider adjusts the degree of deviation from red to apply
+              changes to its various shades. The larger the value, the larger
+              the color range for changes.
+            </span>
+            <div>Hue deviation from red color</div>
+            <div class="slider-container">
+              <span id="hue-delta-value" class="acc-text slider-value"
+                >30°</span
+              >
+              <input
+                id="hue-delta"
+                class="slider"
+                type="range"
+                min="0"
+                max="180"
+                value="30"
+              />
+            </div>
+          </label>
+
+          <label class="parameter-input tooltip">
+            <span class="tooltiptext">
+              This slider adjusts the lightness of the red hue.
+            </span>
+            <div>Red lightness</div>
+            <div class="slider-container">
+              <span id="red-lightness-value" class="acc-text slider-value"
+                >0%</span
+              >
+              <input
+                id="red-lightness"
+                class="slider"
+                type="range"
+                min="-100"
+                max="100"
+                value="0"
+              />
+            </div>
+          </label>
+
+          <div class="button-box">
+            <div>
+              <button id="upload-image">
+                Upload image <i class="icon-upload-arrow"></i>
+              </button>
+            </div>
+            <div class="tooltip">
+              <span class="tooltiptext">
+                .ge file is a project file which contains data about type of
+                project and all parameters for this type. You can upload this
+                file and parameters will be inserted automatically. You will see
+                the same image in the viewport as it was before.
+              </span>
+              <button id="download-ge" class="bold-button">
+                Download .ge <i class="icon-download-arrow"></i>
+              </button>
+              <button id="download-png" class="bold-button">
+                Download .png <i class="icon-image"></i>
+              </button>
+            </div>
+            <div>
+              <a href="../index.html#color-scheme">
+                <button id="read-more">Read more about color schemes</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div id="draw-block" class="draw-block">
+          Original
+          <div class="canvas-container">
+            <canvas
+              id="original-canvas"
+              class="color-scheme-canvas"
+              width="520"
+              height="340"
+            ></canvas>
+          </div>
+          Processed
+          <div class="canvas-container">
+            <canvas
+              id="processed-canvas"
+              class="color-scheme-canvas"
+              width="520"
+              height="340"
+            ></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+      </div>
+    </div>
+
+    <a id="download-file" style="display: none" download="pic.ge"></a>
+    <input id="upload-file" style="display: none" type="file" accept=".ge" />
+    <input
+      id="upload-image-file"
+      style="display: none"
+      type="file"
+      accept="image/*"
+    />
+  </body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="main/main.js" defer></script>
+    <title>Home</title>
+  </head>
+
+  <body class="cyan-body">
+    <nav class="nav">
+      <a href="./index.html">
+        <img class="logo" src="assets/images/logo.svg" />
+        <img class="logo-title" src="assets/images/logo-title.svg" />
+      </a>
+      <a class="nav-item selected">Home</a>
+      <a class="nav-item" href="./fractal/index.html">IFS-fractal</a>
+      <a class="nav-item" href="./color-scheme/index.html">Color scheme</a>
+      <a class="nav-item" href="./transformations/index.html">Transformation</a>
+      <button id="upload-button" class="upload-button">
+        Upload project <i class="icon-upload-arrow"></i>
+      </button>
+    </nav>
+
+    <div class="page home-page">
+      <h1 class="title">Explore graphics with us!</h1>
+
+      <div class="menu">
+        <div class="item">
+          <a href="fractal/index.html">
+            <div class="image blue rotation">
+              <img class="shadow" src="assets/images/fractal-icon.png" />
+            </div>
+            <div class="header">IFS-fractal</div>
+          </a>
+          <button id="fractal-button">Read more...</button>
+        </div>
+        <div class="item">
+          <a href="color-scheme/index.html">
+            <div class="image green rotation">
+              <img class="shadow" src="assets/images/color-scheme-icon.png" />
+            </div>
+            <div class="header">Color scheme</div>
+          </a>
+          <button id="color-scheme-button">Read more...</button>
+        </div>
+        <div class="item">
+          <a href="transformations/index.html">
+            <div class="image purple rotation">
+              <img class="shadow" src="assets/images/transformation-icon.png" />
+            </div>
+            <div class="header">Transformation</div>
+          </a>
+          <button id="affine-transformations-button">Read more...</button>
+        </div>
+      </div>
+
+      <div class="splitter"></div>
+
+      <div class="text">
+        <h2 id="fractal" class="block-title">What is fractal?</h2>
+        <p>
+          In mathematics, a fractal is a subset of Euclidean space with a
+          fractal dimension that strictly exceeds its topological dimension.
+          Fractals appear the same at different scales, as illustrated in
+          successive magnifications of the Mandelbrot set. Fractals often
+          exhibit similar patterns at increasingly smaller scales, a property
+          called self-similarity, also known as expanding symmetry or unfolding
+          symmetry; if this replication is exactly the same at every scale, as
+          in the Menger sponge, it is called affine self-similar. Fractal
+          geometry lies within the mathematical branch of measure theory.
+        </p>
+        <p>
+          One way that fractals are different from finite geometric figures is
+          how they scale. Doubling the edge lengths of a polygon multiplies its
+          area by four, which is two (the ratio of the new to the old side
+          length) raised to the power of two (the dimension of the space the
+          polygon resides in). Likewise, if the radius of a sphere is doubled,
+          its volume scales by eight, which is two (the ratio of the new to the
+          old radius) to the power of three (the dimension that the sphere
+          resides in). However, if a fractal's one-dimensional lengths are all
+          doubled, the spatial content of the fractal scales by a power that is
+          not necessarily an integer. This power is called the fractal dimension
+          of the fractal, and it usually exceeds the fractal's topological
+          dimension.
+        </p>
+        <p>
+          Analytically, most fractals are nowhere differentiable. An infinite
+          fractal curve can be conceived of as winding through space differently
+          from an ordinary line — although it is still topologically
+          1-dimensional, its fractal dimension indicates that it also resembles
+          a surface.
+        </p>
+        <p>
+          The consensus among mathematicians is that theoretical fractals are
+          infinitely self-similar, iterated, and detailed mathematical
+          constructs having fractal dimensions, of which many examples have been
+          formulated and studied. Fractals are not limited to geometric
+          patterns, but can also describe processes in time. Fractal patterns
+          with various degrees of self-similarity have been rendered or studied
+          in visual, physical, and aural media and found in nature, technology,
+          art, architecture and law. Fractals are of particular relevance in the
+          field of chaos theory because the graphs of most chaotic processes are
+          fractals. Many real and model networks have been found to have fractal
+          features such as self similarity.
+        </p>
+        <p>
+          Images of fractals can be created by fractal generating programs.
+          Because of the butterfly effect, a small change in a single variable
+          can have an unpredictable outcome.
+        </p>
+
+        <ul>
+          <li>
+            <span class="acc-text blue">Iterated function systems (IFS)</span> —
+            use fixed geometric replacement rules; may be stochastic or
+            deterministic; e.g., Koch snowflake, Cantor set, Haferman carpet,
+            Sierpinski carpet, Sierpinski gasket, Peano curve, Harter-Heighway
+            dragon curve, T-square, Menger sponge;
+          </li>
+          <li>
+            <span class="acc-text blue">Strange attractors</span> — use
+            iterations of a map or solutions of a system of initial-value
+            differential or difference equations that exhibit chaos (e.g., see
+            multifractal image, or the logistic map);
+          </li>
+          <li>
+            <span class="acc-text blue">L-systems</span> — use string rewriting;
+            may resemble branching patterns, such as in plants, biological cells
+            (e.g., neurons and immune system cells), blood vessels, pulmonary
+            structure, etc. or turtle graphics patterns such as space-filling
+            curves and tilings;
+          </li>
+          <li>
+            <span class="acc-text blue">Escape-time fractals</span> — use a
+            formula or recurrence relation at each point in a space (such as the
+            complex plane); usually quasi-self-similar; also known as "orbit"
+            fractals; e.g., the Mandelbrot set, Julia set, Burning Ship fractal,
+            Nova fractal and Lyapunov fractal. The 2d vector fields that are
+            generated by one or two iterations of escape-time formulae also give
+            rise to a fractal form when points (or pixel data) are passed
+            through this field repeatedly;
+          </li>
+          <li>
+            <span class="acc-text blue">Random fractals</span> — use stochastic
+            rules; e.g., Levy flight, percolation clusters, self avoiding walks,
+            fractal landscapes, trajectories of Brownian motion and the Brownian
+            tree (i.e., dendritic fractals generated by modeling
+            diffusion-limited aggregation or reaction-limited aggregation
+            clusters);
+          </li>
+          <li>
+            <span class="acc-text blue">Finite subdivision rules</span> — use a
+            recursive topological algorithm for refining tilings and they are
+            similar to the process of cell division. The iterative processes
+            used in creating the Cantor set and the Sierpinski carpet are
+            examples of finite subdivision rules, as is barycentric subdivision.
+          </li>
+        </ul>
+
+        <div class="menu">
+          <div class="item">
+            <a href="assets/images/article/mandelbrot-fractal.png">
+              <div class="image blue">
+                <img src="assets/images/article/mandelbrot-fractal.png" />
+              </div>
+              <div class="caption">Mandelbrot fractal</div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="assets/images/article/koch-curve.png">
+              <div class="image blue">
+                <img src="assets/images/article/koch-curve.png" />
+              </div>
+              <div class="caption">Koch curve</div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="assets/images/article/sierpinski-triangle.png">
+              <div class="image blue">
+                <img src="assets/images/article/sierpinski-triangle.png" />
+              </div>
+              <div class="caption">Sierpinski triangle</div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="assets/images/article/stochastic-fractal.png">
+              <div class="image blue">
+                <img src="assets/images/article/stochastic-fractal.png" />
+              </div>
+              <div class="caption">Stochastic fractal</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text">
+        <h2 id="color-scheme" class="block-title">What is color scheme?</h2>
+        <p>
+          A color scheme (or model) is an abstract mathematical model describing
+          the way colors can be represented as tuples of numbers, typically as
+          three or four values or color components. When this model is
+          associated with a precise description of how the components are to be
+          interpreted (viewing conditions, etc.), the resulting set of colors is
+          called "color space". This section describes ways in which human color
+          vision can be modeled.
+        </p>
+        <p>
+          One can picture this space as a region in three-dimensional Euclidean
+          space if one identifies the x, y, and z axes with the stimuli for the
+          long-wavelength (L), medium-wavelength (M), and short-wavelength (S)
+          light receptors. The origin, (S,M,L) = (0,0,0), corresponds to black.
+          White has no definite position in this diagram; rather it is defined
+          according to the color temperature or white balance as desired or as
+          available from ambient lighting. The human color space is a
+          horse-shoe-shaped cone, extending from the origin to, in principle,
+          infinity. In practice, the human color receptors will be saturated or
+          even be damaged at extremely high light intensities, but such behavior
+          is not part of the CIE color space and neither is the changing color
+          perception at low light levels. The most saturated colors are located
+          at the outer rim of the region, with brighter colors farther removed
+          from the origin. As far as the responses of the receptors in the eye
+          are concerned, there is no such thing as "brown" or "gray" light. The
+          latter color names refer to orange and white light respectively, with
+          an intensity that is lower than the light from surrounding areas. One
+          can observe this by watching the screen of an overhead projector
+          during a meeting: one sees black lettering on a white background, even
+          though the "black" has in fact not become darker than the white screen
+          on which it is projected before the projector was turned on. The
+          "black" areas have not actually become darker but appear "black"
+          relative to the higher intensity "white" projected onto the screen
+          around it.
+        </p>
+        <p>
+          The human tristimulus space has the property that additive mixing of
+          colors corresponds to the adding of vectors in this space. This makes
+          it easy to, for example, describe the possible colors (gamut) that can
+          be constructed from the red, green, and blue primaries in a computer
+          display.
+        </p>
+
+        <div class="menu">
+          <div class="item">
+            <a href="assets/images/article/RGB.png">
+              <div class="image green">
+                <img src="assets/images/article/RGB.png" />
+              </div>
+              <div class="caption">RGB</div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="assets/images/article/CMYK.png">
+              <div class="image green">
+                <img src="assets/images/article/CMYK.png" />
+              </div>
+              <div class="caption">CMYK</div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="assets/images/article/HSL.png">
+              <div class="image green">
+                <img src="assets/images/article/HSL.png" />
+              </div>
+              <div class="caption">HSL</div>
+            </a>
+          </div>
+        </div>
+
+        <p>
+          Media that transmit light (such as television) use additive color
+          mixing with primary colors of red, green, and blue, each of which
+          stimulates one of the three types of the eye's color receptors with as
+          little stimulation as possible of the other two. This is called "<span
+            class="acc-text green"
+            >RGB</span
+          >" color space. Mixtures of light of these primary colors cover a
+          large part of the human color space and thus produce a large part of
+          human color experiences. This is why color television sets or color
+          computer monitors need only produce mixtures of red, green and blue
+          light.
+        </p>
+        <p>
+          Other primary colors could in principle be used, but with red, green
+          and blue the largest portion of the human color space can be captured.
+          Unfortunately there is no exact consensus as to what loci in the
+          chromaticity diagram the red, green, and blue colors should have, so
+          the same RGB values can give rise to slightly different colors on
+          different screens.
+        </p>
+        <p>
+          It is possible to achieve a large range of colors seen by humans by
+          combining cyan, magenta, and yellow transparent dyes/inks on a white
+          substrate. These are the subtractive primary colors. Often a fourth
+          ink, black, is added to improve reproduction of some dark colors. This
+          is called the "<span class="acc-text green">CMY</span>" or "<span
+            class="acc-text green"
+            >CMYK</span
+          >" color space.
+        </p>
+        <p>
+          The cyan ink absorbs red light but reflects green and blue, the
+          magenta ink absorbs green light but reflects red and blue, and the
+          yellow ink absorbs blue light but reflects red and green. The white
+          substrate reflects the transmitted light back to the viewer. Because
+          in practice the CMY inks suitable for printing also reflect a little
+          bit of color, making a deep and neutral black impossible, the K (black
+          ink) component, usually printed last, is needed to compensate for
+          their deficiencies. Use of a separate black ink is also economically
+          driven when a lot of black content is expected, e.g. in text media, to
+          reduce simultaneous use of the three colored inks. The dyes used in
+          traditional color photographic prints and slides are much more
+          perfectly transparent, so a K component is normally not needed or used
+          in those media.
+        </p>
+        <p>
+          <span class="acc-text green">HSL</span> and
+          <span class="acc-text green">HSV</span> are both cylindrical
+          geometries, with hue, their angular dimension, starting at the red
+          primary at 0°, passing through the green primary at 120° and the blue
+          primary at 240°, and then wrapping back to red at 360°. In each
+          geometry, the central vertical axis comprises the neutral, achromatic,
+          or gray colors, ranging from black at lightness 0 or value 0, the
+          bottom, to white at lightness 1 or value 1, the top.
+        </p>
+        <p>
+          Most televisions, computer displays, and projectors produce colors by
+          combining red, green, and blue light in varying intensities—the
+          so-called RGB additive primary colors. However, the relationship
+          between the constituent amounts of red, green, and blue light and the
+          resulting color is unintuitive, especially for inexperienced users,
+          and for users familiar with subtractive color mixing of paints or
+          traditional artists' models based on tints and shades.
+        </p>
+        <p>
+          In an attempt to accommodate more traditional and intuitive color
+          mixing models, computer graphics pioneers at PARC and NYIT developed
+          the HSV model in the mid-1970s, formally described by Alvy Ray Smith
+          in the August 1978 issue of Computer Graphics. In the same issue,
+          Joblove and Greenberg described the HSL model—whose dimensions they
+          labeled hue, relative chroma, and intensity—and compared it to HSV.
+          Their model was based more upon how colors are organized and
+          conceptualized in human vision in terms of other color-making
+          attributes, such as hue, lightness, and chroma; as well as upon
+          traditional color mixing methods—e.g., in painting—that involve mixing
+          brightly colored pigments with black or white to achieve lighter,
+          darker, or less colorful colors.
+        </p>
+        <p>
+          The following year, 1979, at SIGGRAPH, Tektronix introduced graphics
+          terminals using HSL for color designation, and the Computer Graphics
+          Standards Committee recommended it in their annual status report.
+          These models were useful not only because they were more intuitive
+          than raw RGB values, but also because the conversions to and from RGB
+          were extremely fast to compute: they could run in real time on the
+          hardware of the 1970s. Consequently, these models and similar ones
+          have become ubiquitous throughout image editing and graphics software
+          since then.
+        </p>
+      </div>
+
+      <div class="text">
+        <h2 id="affine-transformations" class="block-title">
+          What is affine transformations?
+        </h2>
+        <p>
+          In Euclidean geometry, an affine transformation, or an affinity (from
+          the Latin, affinis, "connected with"), is a geometric transformation
+          that preserves lines and parallelism (but not necessarily distances
+          and angles).
+        </p>
+        <p>
+          More generally, an affine transformation is an automorphism of an
+          affine space (Euclidean spaces are specific affine spaces), that is, a
+          function which maps an affine space onto itself while preserving both
+          the dimension of any affine subspaces (meaning that it sends points to
+          points, lines to lines, planes to planes, and so on) and the ratios of
+          the lengths of parallel line segments. Consequently, sets of parallel
+          affine subspaces remain parallel after an affine transformation. An
+          affine transformation does not necessarily preserve angles between
+          lines or distances between points, though it does preserve ratios of
+          distances between points lying on a straight line.
+        </p>
+        <p>
+          If X is the point set of an affine space, then every affine
+          transformation on X can be represented as the composition of a linear
+          transformation on X and a translation of X. Unlike a purely linear
+          transformation, an affine transformation need not preserve the origin
+          of the affine space. Thus, every linear transformation is affine, but
+          not every affine transformation is linear.
+        </p>
+        <p>
+          Examples of affine transformations include
+          <span class="acc-text purple"
+            >translation, scaling, homothety, similarity, reflection, rotation,
+            shear mapping, and compositions of them in any combination and
+            sequence</span
+          >.
+        </p>
+        <p>
+          Viewing an affine space as the complement of a hyperplane at infinity
+          of a projective space, the affine transformations are the projective
+          transformations of that projective space that leave the hyperplane at
+          infinity invariant, restricted to the complement of that hyperplane.
+        </p>
+        <p>
+          A generalization of an affine transformation is an affine map (or
+          affine homomorphism or affine mapping) between two (potentially
+          different) affine spaces over the same field. An affine map is the
+          composition of two functions: a translation and a linear map. Ordinary
+          vector algebra uses matrix multiplication to represent linear maps,
+          and vector addition to represent translations.
+        </p>
+        <p>
+          Using an augmented matrix and an augmented vector, it is possible to
+          represent both the translation and the linear map using a single
+          matrix multiplication. The technique requires that all vectors be
+          augmented with a "1" at the end, and all matrices be augmented with an
+          extra row of zeros at the bottom, an extra column—the translation
+          vector—to the right, and a "1" in the lower right corner.
+        </p>
+        <p>
+          The matrices of the
+          <span class="acc-text purple">main affine transformations</span> are
+          shown on the images below.
+        </p>
+
+        <div class="menu">
+          <div class="item">
+            <a href="assets/images/article/translate-transformation.png">
+              <div class="image purple expanded">
+                <img src="assets/images/article/translate-transformation.png" />
+              </div>
+              <div class="caption">Translation matrix</div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="assets/images/article/scale-transformation.png">
+              <div class="image purple expanded">
+                <img src="assets/images/article/scale-transformation.png" />
+              </div>
+              <div class="caption">Scaling matrix</div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="assets/images/article/rotate-transformation.png">
+              <div class="image purple expanded">
+                <img src="assets/images/article/rotate-transformation.png" />
+              </div>
+              <div class="caption">Rotation matrix</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+      </div>
+    </div>
+
+    <a id="download-file" style="display: none" download="fractal.ge"></a>
+    <input id="upload-file" style="display: none" type="file" />
+  </body>
+</html>
